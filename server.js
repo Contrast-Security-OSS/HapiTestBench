@@ -71,6 +71,10 @@ const manifest = {
         plugin: './routes/session/secure-flag-missing.js',
         routes: {prefix: '/session/secureflagmissing'}
       },
+      {
+        plugin: './routes/ssrf',
+        routes: {prefix: '/ssrf'}
+      }
 
     ]
   }
