@@ -13,21 +13,15 @@ hooker.hook(require('mysql/lib/Connection').prototype, 'query', {
 	}
 });
 
-let connection;
-if (process.env.MYSQL_URI) {
-	connection = mysql.createConnection(process.env.MYSQL_URI);
-} else {
-	connection = mysql.createConnection({
-		host: process.env.MYSQL_HOST || 'localhost',
-		user: process.env.MYSQL_USER || 'root'
-	});
-}
+connection = mysql.createConnection({
+	host: 'localhost',
+	user: 'root'
+});
 
 // pretend we already connected
 connection._connectCalled = true;
 
-// TODO: rename this function?
-exports.register = function mongo(server, options) {
+exports.register = function (server, options) {
 	connection.connect();
 	connection.query = util.promisify(connection.query);
 	console.log('connected to mysql server'); // eslint-disable-line
