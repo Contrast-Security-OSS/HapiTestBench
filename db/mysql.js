@@ -13,7 +13,7 @@ hooker.hook(require('mysql/lib/Connection').prototype, 'query', {
 	}
 });
 
-connection = mysql.createConnection({
+const connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root'
 });
