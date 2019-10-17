@@ -42,7 +42,8 @@
     "@hapi/vision": "^5.4.4",
     "ejs": "^2.5.7",
     "libxmljs": "^0.19.7",
-    "mongodb": "^3.3.0"
+    "mongodb": "^3.3.0",
+    "pem": "^1.14.3"
   },
   "devDependencies": {
     "@contrast/eslint-config": "^1.0.3",
